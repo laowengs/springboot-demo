@@ -29,4 +29,12 @@ public interface ISort<T extends Comparable<T>> {
      * @param j
      */
     void exchange(T[] arr, int i, int j);
+
+    /**
+     * 比较两个对象大小 v是否小于w
+     * @param v
+     * @param w
+     * @return
+     */
+    boolean less(T v,T w);
 }

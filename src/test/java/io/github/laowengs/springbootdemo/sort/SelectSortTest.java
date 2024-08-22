@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SelectSortTest {
-
+    SelectSort<Integer> selectSort = new SelectSort<>();
+    Integer[] arr = {5, 2, 8, 3, 9, 1, 7};
     @Test
     void name() {
-        SelectSort<Integer> selectSort = new SelectSort<Integer>();
-        Integer[] arr = {5, 2, 8, 3, 9, 1, 7};
         selectSort.sort(arr);
+        assertTrue(selectSort.isSorted(arr));
     }
 }
