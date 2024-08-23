@@ -18,7 +18,7 @@ public class SelectSort<T extends Comparable<T>> implements ISort<T>{
             T minElement = arr[i];
             int minIndex = i;
             for (int j = i+1; j < arr.length; j++) {
-                if(arr[j] != null && less(minElement, arr[j])){
+                if(arr[j] != null && less(arr[j],minElement)){
                     minElement = arr[j];
                     minIndex = j;
 //                    System.out.println("minElement changed to:"+minElement+",index :"+minIndex);
@@ -40,7 +40,7 @@ public class SelectSort<T extends Comparable<T>> implements ISort<T>{
     @Override
     public boolean isSorted(T[] arr) {
         for (int i = 0; i < arr.length-1; i++) {
-            if(i < arr.length-2 && less(arr[i],arr[i+1])){
+            if(i < arr.length-2 && less(arr[i+1],arr[i])){
                 return false;
             }
         }
@@ -57,6 +57,6 @@ public class SelectSort<T extends Comparable<T>> implements ISort<T>{
 
     @Override
     public boolean less(T v, T w) {
-        return v.compareTo(w)>0;
+        return v.compareTo(w)<0;
     }
 }
